@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://26ra401aryr0"]
+
+[ext_resource type="Script" uid="uid://dfuucy2jymyre" path="res://Scripts/control.gd" id="1_xr6hu"]
+[ext_resource type="Texture2D" uid="uid://dlaq7fdic5n74" path="res://Sprite-0001dwdqwdw.png" id="2_36qhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfsxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbxs7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8p0r"]
+
+[node name="Control" type="Control" unique_id=2055109303]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xr6hu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1266859719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=340329020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_36qhe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=398231761]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.63000005
+anchor_bottom = 0.63000005
+offset_top = -216.24002
+offset_right = 270.0
+offset_bottom = -27.24002
+theme_override_constants/separation = 18
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1902705375]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jfsxs")
+text = "PLAY GAME
+"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=433195418]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xbxs7")
+text = "SETTINGS"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=542611915]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g8p0r")
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

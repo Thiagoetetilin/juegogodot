@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d21nq81jdkvol"]
+
+[ext_resource type="Script" uid="uid://d33pq8iqqdp0o" path="res://options.gd" id="1_se8ut"]
+[ext_resource type="Texture2D" uid="uid://fl0jke5mgbg4" path="res://opciones.png" id="2_ao2gm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfsxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8p0r"]
+
+[node name="option" type="Control" unique_id=2055109303]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_se8ut")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1266859719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1197479825]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_ao2gm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=398231761]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35200003
+anchor_top = 0.62700003
+anchor_right = 0.35200003
+anchor_bottom = 0.62700003
+offset_left = 22.495972
+offset_top = -206.29602
+offset_right = 319.49597
+offset_bottom = -43.29602
+theme_override_constants/separation = 27
+
+[node name="Volumen" type="Button" parent="VBoxContainer" unique_id=1902705375]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jfsxs")
+text = "Volume"
+
+[node name="Atras" type="Button" parent="VBoxContainer" unique_id=542611915]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g8p0r")
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Volumen" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Atras" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Atras" to="." method="_on_atras_pressed"]
